@@ -1,0 +1,24 @@
+<table class="t-transactions">
+   <th>Date</th>
+   <th>Cost</th>
+   <th>Asset</th>
+   <th>Buy Price</th>
+   <th>Net Buy Price</th>
+   <th>Qty</th>
+   <tbody>
+{{#each model as |transaction|}}
+   <tr>
+      <td rowspan={{add transaction.assets.length 1}}>{{transaction.t_date}}</td>
+      <td rowspan={{add transaction.assets.length 1}}>{{transaction.t_cost}}</td>
+   </tr>
+   {{#each transaction.assets as |asset|}}
+      <tr>
+         <td>{{asset.symbol}}</td>
+         <td>{{asset.buy_price}}</td>
+         <td>TBD</td>
+         <td>{{asset.qty}}</td>
+      </tr>
+   {{/each}}
+{{/each}}
+</tbody>
+</table>
