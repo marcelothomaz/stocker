@@ -7,7 +7,7 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('transaction');
+  this.route('transaction', function() {});
 });
 
 export default Router;
